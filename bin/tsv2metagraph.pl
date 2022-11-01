@@ -5,10 +5,10 @@ use JSON;
 
 ###
 #
-# This script studies a pair of TSV files (nodes and edges) to perform QC.
-# It produces a TGF for a graph representing the metagraph.
+# This script studies a pair of TSV files (nodes and edges) to derive their metagraph representation. It makes various assumptions about format, including the presence of biolink CURIEs.
+# It produces a graph in graphml format, printed to STDOUT.
 #
-# Use: bin/studyKGstructure.pl path_to/nodes.tsv path_to/edges.tsv > metagraph.tgf
+# Use: bin/tsv2metagraph.pl path_to/nodes.tsv path_to/edges.tsv > metagraph.graphml
 #
 ###
 
