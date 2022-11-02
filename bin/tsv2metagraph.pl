@@ -194,7 +194,7 @@ sub printEdges {
 		print $ind x 5, "<y:LineStyle color=\"#000000\" type=\"$type\" width=\"$width\"/>\n";
 		print $ind x 5, "<y:Arrows source=\"none\" target=\"standard\"/>\n";
 		print $ind x 5, <<EDGE_BLOCK;
-<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="shead" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="41.939453125" x="-52.06445173023408" xml:space="preserve" y="-20.132811759597388">$name<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+<y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" width="41.939453125" x="-52.06445173023408" xml:space="preserve" y="-20.132811759597388">$name<y:PreferredPlacementDescriptor angle="0.0" autoRotationEnabled="true" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
 EDGE_BLOCK
 		print $ind x 4, "</y:PolyLineEdge>\n";
 		print $ind x 3, "</data>\n";
