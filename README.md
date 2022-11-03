@@ -14,7 +14,7 @@ To install this software, simply clone this repository:
 ## Usage
 
 1. Create the graphml file:  
-  `bin/metagraph.pl path/to/nodes_file.tsv path/to/edges_file.tsv > path/to/metagraph_file.graphml
+  `bin/metagraph.pl path/to/nodes_file.tsv path/to/edges_file.tsv > path/to/metagraph_file.graphml`
  
 2. Open the resulting graphml file in yEd.
 3. In yEd, select menu **Tools**, command **Fit Node to Label**, unselect 'Ignore Width' and 'Ignore Height' if they're selected, and click **OK**.
