@@ -9,11 +9,13 @@ use JSON;
 # It produces a graph in graphml format, printed to STDOUT.
 #
 # Use: bin/tsv2metagraph.pl path_to/nodes.tsv path_to/edges.tsv > metagraph.graphml
+# The optional 3rd parameter is the delimiter to use, defaulting to a tab.
 #
 ###
 
 
-my($nodesFile, $edgesFile) = @ARGV;
+my($nodesFile, $edgesFile, $delim) = @ARGV;
+$delim ||= "\t";
 my(@nodes, @edges, %nodei);
 my $ind = "  ";
 my %shape = qw/NodeType ellipse CURIE rectangle/;
@@ -29,7 +31,7 @@ my $catcol = $nodeCols->{'category'};
 my(@v, $id, $cat, %category, $class, %classCount, %catCount, %ccCount);
 while (<F>) {
 	chomp;
-	@v = split /\t/;
+	@v = split /$delim/;
 	$id = $v[$idcol];
 	$cat = $v[$catcol];
 	if ($cat =~ /biolink:(.+)/) {
@@ -78,7 +80,7 @@ my $objcol = $edgeCols->{'object'};
 my(@v, $subj, $pred, $obj, $sclass, $oclass, %eCount);
 while (<F>) {
 	chomp;
-	@v = split /\t/;
+	@v = split /$delim/;
 	$subj = $v[$subjcol];
 	$pred = $v[$predcol];
 	$obj = $v[$objcol];
@@ -121,7 +123,7 @@ sub openFile {
 	}
 	$_ = <F>;
 	chomp;
-	my @headers = split /\t/;
+	my @headers = split /$delim/;
 	my %col;
 	$col{$headers[$_]} = $_ foreach (0..$#headers);
 
